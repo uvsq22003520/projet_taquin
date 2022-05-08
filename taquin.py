@@ -193,25 +193,5 @@ lbl.pack(side="left")
 cnv.bind("<Button-1>",clic)
 init()
 
-import json
-#save files below
-def save_file():
-#to enter a name for your file
-#if you don't want to just make it a string
-    save_name = input("savename: ")
-    path = 'path_to_dir{0}.json'.format(save_name)
-    data = {
-        'name': save_name
-    }
-    with open(path, 'w+') as f:
-        json.dump(data, f)
-
-
-def load_file():
-    load_name = save_name
-    path_two = 'path_to_dir{0}.json'.format(load_name)
-    with open(path_two, 'r') as f:
-        j = json.load(f)
-        name = str(j['name'])
 
 master.mainloop()
