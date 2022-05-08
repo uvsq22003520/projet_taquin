@@ -91,7 +91,19 @@ def move_tile(orig, dstn, drtn):
     board[i][j],board[ii][jj]=board[ii][jj], board[i][j]
 
 
+def clic(event):
+    global i_empty,j_empty
+    i=event.y//100
+    j=event.x//100
 
+    r=multi((i,j),(i_empty,j_empty))
+    if (r is None) or moving:
+        return
+    L, drtn=r
+    for orig,dstn in L:
+        move_tile(orig,dstn, drtn[::-1])
+    i_empty=i
+    j_empty=j
 
 
 
@@ -147,9 +159,9 @@ def init(N=1000):
         for j in range(4):
             x, y=100*j, 100*i
             A, B, C=(x, y), (x+100, y+100), (x+50, y+50)
-            rect=cnv.create_rectangle(A, B, fill="green")
+            rect=cnv.create_rectangle(A, B, fill="white")
             nro=board[i][j]
-            txt=cnv.create_text(C, text=nro, fill="yellow",
+            txt=cnv.create_text(C, text=nro, fill="black",
                                 font=FONT)
             items[nro]=(rect, txt)
     rect, txt=items[16]
