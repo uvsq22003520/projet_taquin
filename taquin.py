@@ -5,7 +5,7 @@ DELTA=20
 DIST=10
 moving=0
 
-def multi(orig, empty):
+def multi(orig, empty):                    
     i, j=orig
     ii, jj=empty
     delta=(di, dj)=(ii-i, jj-j)
@@ -36,7 +36,7 @@ def anim(item, target, drtn):
     else:
         cnv.move(item, (x-a), (y-b))
         moving-=1
-
+# http://pascal.ortiz.free.fr/contents/tkinter/projets_tkinter/taquin/taquin.html : source utiliser 
 #Benjamin
 def genererPlateauRandom() ->list:
 
@@ -192,6 +192,8 @@ lbl.pack(side="left")
 
 cnv.bind("<Button-1>",clic)
 init()
+
+# http://pascal.ortiz.free.fr/contents/tkinter/projets_tkinter/taquin/taquin.html : source utiliser
 
 import json
 #save files below
