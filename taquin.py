@@ -42,7 +42,7 @@ def genererPlateauRandom() ->list:
 
     listePlateau=[ k for k in range(1,16)]
 
-    shuffle(listePlateau)
+    #shuffle(listePlateau)
 
     return listePlateau+[0]
 
@@ -175,8 +175,8 @@ def init(N=1000):
      #board2=board avant deplacement pour sauvegarder les positions
      #apres deplacement et quand on appuis sur le bouton retour board=board2
     
-def sauvegarde():
-    fic.write(str(board))#erreur         
+#def sauvegarde():
+    #fic.write(str(board))#erreur         
 
 win=[[1, 2, 3, 4],
      [5, 6, 7, 8],
@@ -192,9 +192,8 @@ btn=Button(text="Mélanger", command=init)
 btn.pack()
 #btn=Button(text="RETOUR", command=retour)
 #btn.pack()
-btn=Button(text="sauvegarder", command=sauvegarde)
-btn.pack()
-
+#btn=Button(text="sauvegarder", command=sauvegarde)
+#btn.pack()
 lbl=Label(text="      ", font=('Ubuntu', 25, 'bold'),
           justify=CENTER, width=7)
 lbl.pack(side="left")
