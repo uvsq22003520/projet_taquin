@@ -140,6 +140,8 @@ def melanger(N):
         empty=echange(board, empty)
     return board
 
+    
+
 def init(N=1000):
     global i_empty, j_empty, items, board, bravo
     cnv.delete("all")
@@ -169,7 +171,12 @@ def init(N=1000):
     cnv.delete(rect)
     lbl.configure(text="")
     bravo=False
-
+#def retour
+     #board2=board avant deplacement pour sauvegarder les positions
+     #apres deplacement et quand on appuis sur le bouton retour board=board2
+    
+def sauvegarde():
+    fic.write(str(board))#erreur         
 
 win=[[1, 2, 3, 4],
      [5, 6, 7, 8],
@@ -183,7 +190,9 @@ cnv.pack(side='left')
 
 btn=Button(text="Mélanger", command=init)
 btn.pack()
-btn=Button(text="RETOUR", command=init)
+#btn=Button(text="RETOUR", command=retour)
+#btn.pack()
+btn=Button(text="sauvegarder", command=sauvegarde)
 btn.pack()
 
 lbl=Label(text="      ", font=('Ubuntu', 25, 'bold'),
